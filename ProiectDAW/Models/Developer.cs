@@ -6,20 +6,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProiectDAW.Models
 {
-    public class GameModel
+    public class Developer
     {
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Game Name")]
-        public string GameName { get; set; }
+        [Display(Name = "Developer Name")]
+        public string DeveloperName { get; set; }
 
         [Required]
         [Display(Name = "Description")]
-        public string GameDescription { get; set; }
-
-        [Required]
-        [Display(Name = "Price")]
-        public string GamePrice { get; set; }
+        public string DeveloperDescription { get; set; }
     }
 }

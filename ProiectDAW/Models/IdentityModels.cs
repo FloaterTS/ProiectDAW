@@ -32,6 +32,6 @@ namespace ProiectDAW.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<ProiectDAW.Models.GameModel> GameModels { get; set; }
+        public System.Data.Entity.DbSet<ProiectDAW.Models.Developer> Developers { get; set; }
     }
 }

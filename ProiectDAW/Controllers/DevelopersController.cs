@@ -10,107 +10,107 @@ using ProiectDAW.Models;
 
 namespace ProiectDAW.Controllers
 {
-    public class GameModelsController : Controller
+    public class DevelopersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: GameModels
+        // GET: Developers
         public ActionResult Index()
         {
-            return View(db.GameModels.ToList());
+            return View(db.Developers.ToList());
         }
 
-        // GET: GameModels/Details/5
+        // GET: Developers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            GameModel gameModel = db.GameModels.Find(id);
-            if (gameModel == null)
+            Developer developer = db.Developers.Find(id);
+            if (developer == null)
             {
                 return HttpNotFound();
             }
-            return View(gameModel);
+            return View(developer);
         }
 
-        // GET: GameModels/Create
+        // GET: Developers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: GameModels/Create
+        // POST: Developers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,GameName,GameDescription,GamePrice")] GameModel gameModel)
+        public ActionResult Create([Bind(Include = "Id,DeveloperName,DeveloperDescription")] Developer developer)
         {
             if (ModelState.IsValid)
             {
-                db.GameModels.Add(gameModel);
+                db.Developers.Add(developer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(gameModel);
+            return View(developer);
         }
 
-        // GET: GameModels/Edit/5
+        // GET: Developers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            GameModel gameModel = db.GameModels.Find(id);
-            if (gameModel == null)
+            Developer developer = db.Developers.Find(id);
+            if (developer == null)
             {
                 return HttpNotFound();
             }
-            return View(gameModel);
+            return View(developer);
         }
 
-        // POST: GameModels/Edit/5
+        // POST: Developers/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,GameName,GameDescription,GamePrice")] GameModel gameModel)
+        public ActionResult Edit([Bind(Include = "Id,DeveloperName,DeveloperDescription")] Developer developer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(gameModel).State = EntityState.Modified;
+                db.Entry(developer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(gameModel);
+            return View(developer);
         }
 
-        // GET: GameModels/Delete/5
+        // GET: Developers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            GameModel gameModel = db.GameModels.Find(id);
-            if (gameModel == null)
+            Developer developer = db.Developers.Find(id);
+            if (developer == null)
             {
                 return HttpNotFound();
             }
-            return View(gameModel);
+            return View(developer);
         }
 
-        // POST: GameModels/Delete/5
+        // POST: Developers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            GameModel gameModel = db.GameModels.Find(id);
-            db.GameModels.Remove(gameModel);
+            Developer developer = db.Developers.Find(id);
+            db.Developers.Remove(developer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
