@@ -1,0 +1,42 @@
+﻿@model ProiectDAW.Models.BuyPackage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BuyPackage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BuyPackageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuyPackageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuyPackagePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuyPackagePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuyPackageDuration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuyPackageDuration)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

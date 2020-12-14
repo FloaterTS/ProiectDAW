@@ -35,5 +35,7 @@ namespace ProiectDAW.Models
         public System.Data.Entity.DbSet<ProiectDAW.Models.Developer> Developers { get; set; }
 
         public System.Data.Entity.DbSet<ProiectDAW.Models.Game> Games { get; set; }
+
+        public System.Data.Entity.DbSet<ProiectDAW.Models.BuyPackage> BuyPackages { get; set; }
     }
 }

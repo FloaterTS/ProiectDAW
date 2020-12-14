@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BuyPackagesController.cs" />
     <Compile Include="Controllers\DevelopersController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -203,8 +204,13 @@
     <Compile Include="Migrations\202012141909439_AddNewGameTable.Designer.cs">
       <DependentUpon>202012141909439_AddNewGameTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012141932206_AddBuyPackageTable.cs" />
+    <Compile Include="Migrations\202012141932206_AddBuyPackageTable.Designer.cs">
+      <DependentUpon>202012141932206_AddBuyPackageTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BuyPackage.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Developer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -275,6 +281,11 @@
     <Content Include="Views\Games\Details.cshtml" />
     <Content Include="Views\Games\Edit.cshtml" />
     <Content Include="Views\Games\Index.cshtml" />
+    <Content Include="Views\BuyPackages\Create.cshtml" />
+    <Content Include="Views\BuyPackages\Delete.cshtml" />
+    <Content Include="Views\BuyPackages\Details.cshtml" />
+    <Content Include="Views\BuyPackages\Edit.cshtml" />
+    <Content Include="Views\BuyPackages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012141909439_AddNewGameTable.resx">
       <DependentUpon>202012141909439_AddNewGameTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012141932206_AddBuyPackageTable.resx">
+      <DependentUpon>202012141932206_AddBuyPackageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
