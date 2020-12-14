@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DevelopersController.cs" />
+    <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -198,8 +199,13 @@
     <Compile Include="Migrations\202012141900012_AddDevelopersTable.Designer.cs">
       <DependentUpon>202012141900012_AddDevelopersTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012141909439_AddNewGameTable.cs" />
+    <Compile Include="Migrations\202012141909439_AddNewGameTable.Designer.cs">
+      <DependentUpon>202012141909439_AddNewGameTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Developer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -264,6 +270,11 @@
     <Content Include="Views\Developers\Details.cshtml" />
     <Content Include="Views\Developers\Edit.cshtml" />
     <Content Include="Views\Developers\Index.cshtml" />
+    <Content Include="Views\Games\Create.cshtml" />
+    <Content Include="Views\Games\Delete.cshtml" />
+    <Content Include="Views\Games\Details.cshtml" />
+    <Content Include="Views\Games\Edit.cshtml" />
+    <Content Include="Views\Games\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -299,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012141900012_AddDevelopersTable.resx">
       <DependentUpon>202012141900012_AddDevelopersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012141909439_AddNewGameTable.resx">
+      <DependentUpon>202012141909439_AddNewGameTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
