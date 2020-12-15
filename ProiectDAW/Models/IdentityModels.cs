@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -10,6 +11,8 @@ namespace ProiectDAW.Models
     public class ApplicationUser : IdentityUser
     {
         public string UserType { get; set; }
+
+        public virtual ICollection<Reservation> Reservations { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -37,5 +40,7 @@ namespace ProiectDAW.Models
         public System.Data.Entity.DbSet<ProiectDAW.Models.Game> Games { get; set; }
 
         public System.Data.Entity.DbSet<ProiectDAW.Models.BuyPackage> BuyPackages { get; set; }
+
+        public System.Data.Entity.DbSet<ProiectDAW.Models.Reservation> Reservations { get; set; }
     }
 }

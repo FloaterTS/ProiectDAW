@@ -15,11 +15,14 @@ namespace ProiectDAW.Models
         public string BuyPackageName { get; set; }
 
         [Required]
-        [Display(Name = "Price")]
+        [Display(Name = "Price (RON)")]
         public int BuyPackagePrice { get; set; }
 
         [Required]
-        [Display(Name = "Duration (hours)")]
+        [Display(Name = "Duration (Hrs)")]
         public int BuyPackageDuration { get; set; }
+
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
+
 }

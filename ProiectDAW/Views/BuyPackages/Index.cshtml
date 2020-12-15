@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<ProiectDAW.Models.BuyPackage>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Packs";
 }
 
-<h2>Index</h2>
+<h2>GameTag Value Packs</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add a new Value Pack!", "Create")
 </p>
-<table class="table">
+<table class="table table-striped table-bordered table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.BuyPackageName)

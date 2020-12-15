@@ -173,6 +173,7 @@
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,6 +209,14 @@
     <Compile Include="Migrations\202012141932206_AddBuyPackageTable.Designer.cs">
       <DependentUpon>202012141932206_AddBuyPackageTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012142315120_AddReservationTable.cs" />
+    <Compile Include="Migrations\202012142315120_AddReservationTable.Designer.cs">
+      <DependentUpon>202012142315120_AddReservationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012142338158_ChangeUserIdToString.cs" />
+    <Compile Include="Migrations\202012142338158_ChangeUserIdToString.Designer.cs">
+      <DependentUpon>202012142338158_ChangeUserIdToString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BuyPackage.cs" />
@@ -215,6 +224,7 @@
     <Compile Include="Models\Developer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -286,6 +296,11 @@
     <Content Include="Views\BuyPackages\Details.cshtml" />
     <Content Include="Views\BuyPackages\Edit.cshtml" />
     <Content Include="Views\BuyPackages\Index.cshtml" />
+    <Content Include="Views\Reservations\Create.cshtml" />
+    <Content Include="Views\Reservations\Delete.cshtml" />
+    <Content Include="Views\Reservations\Details.cshtml" />
+    <Content Include="Views\Reservations\Edit.cshtml" />
+    <Content Include="Views\Reservations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012141932206_AddBuyPackageTable.resx">
       <DependentUpon>202012141932206_AddBuyPackageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012142315120_AddReservationTable.resx">
+      <DependentUpon>202012142315120_AddReservationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012142338158_ChangeUserIdToString.resx">
+      <DependentUpon>202012142338158_ChangeUserIdToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

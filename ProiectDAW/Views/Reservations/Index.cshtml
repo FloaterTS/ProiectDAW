@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProiectDAW.Models.Reservation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>GameTag Reservations</h2>
+
+<p>
+    @Html.ActionLink("Make a new reservation!", "Create")
+</p>
+<table class="table table-striped table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReservationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuyPackage.BuyPackageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Game.GameName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationUser.UserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReservationDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BuyPackage.BuyPackageName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Game.GameName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ApplicationUser.UserName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
+}
+
+</table>

@@ -20,5 +20,7 @@ namespace ProiectDAW.Models
         public int DeveloperId { get; set; }
 
         public virtual Developer Developer { get; set; }
+
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }

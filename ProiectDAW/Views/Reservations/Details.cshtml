@@ -1,0 +1,50 @@
+﻿@model ProiectDAW.Models.Reservation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reservation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReservationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReservationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuyPackage.BuyPackageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuyPackage.BuyPackageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Game.GameName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Game.GameName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUser.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUser.UserName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
