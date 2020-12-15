@@ -13,7 +13,6 @@ namespace ProiectDAW.Models
         [Required]
         [Display(Name = "Reservation Date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime ReservationDate { get; set; }
 
         public int BuyPackageId { get; set; }
