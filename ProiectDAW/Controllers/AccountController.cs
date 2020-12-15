@@ -17,9 +17,11 @@ namespace ProiectDAW.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db;
 
         public AccountController()
         {
+            db = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -139,7 +141,7 @@ namespace ProiectDAW.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.UserType = new SelectList(new[] { "Admin", "Regular" });
+            ViewBag.UserType = new SelectList(db.Roles.Where(a=>!a.Name.Contains("Administrator")).ToList(),"Name","Name");
             return View();
         }
 
@@ -152,18 +154,15 @@ namespace ProiectDAW.Controllers
         {
             if (ModelState.IsValid)
             {
-                ViewBag.UserType = new SelectList(new[] { "Admin", "Regular" });
+                ViewBag.UserType = new SelectList(db.Roles.Where(a => !a.Name.Contains("Administrator")).ToList(), "Name", "Name");
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, UserType = model.UserType };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                    //add user to role -> many to many relation between user and role
+                    await UserManager.AddToRoleAsync(user.Id, model.UserType);
 
                     return RedirectToAction("Index", "Home");
                 }
