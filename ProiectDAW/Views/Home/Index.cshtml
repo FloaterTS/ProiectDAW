@@ -3,29 +3,30 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>GameTag</h1>
+    <p class="lead">GameTag is reservation-based game club where you can come in order to play the latest games on the best platforms available.</p>
+    <p><a href="https://www.youtube.com/watch?v=qtZ0hl-unM4" class="btn btn-primary btn-lg">Game on! &raquo;</a></p>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p>Check out our value packages for prices and details about the duration of you stay.</p>
+        <p class="btn btn-lg">@Html.ActionLink("Check out our packs", "Index", "BuyPackages")</p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="col-md-3">
+        <h2>What's next?</h2>
+        <p>Pick the game you want to play from out large game library! Also make sure to register your account.</p>
+        <p>@Html.ActionLink("Check out our games", "Index", "Games")</p>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-md-3">
+        <h2>Game chosen</h2>
+        <p>Now just pick up you phone and give us a call or email us in order for us to make the reservation.</p>
+        <p>@Html.ActionLink("Check out our contact details", "Contact", "Home")</p>
+    </div>
+    <div class="col-md-3">
+        <h2>All done?</h2>
+        <p>You can now check your reservation (if you are logged in), as well as the reservations of any other customers of ours.</p>
+        <p>@Html.ActionLink("Check out reservations", "Index", "Reservations")</p>
     </div>
 </div>
