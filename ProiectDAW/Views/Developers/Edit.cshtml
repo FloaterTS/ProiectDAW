@@ -1,10 +1,10 @@
 ﻿@model ProiectDAW.Models.Developer
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Dev";
 }
 
-<h2>Edit</h2>
+<h2>Edit Developer / Publisher</h2>
 
 
 @using (Html.BeginForm())
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Developer</h4>
+        <h4>Something Changed?</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -42,7 +42,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Dev List", "Index")
 </div>
 
 @section Scripts {
