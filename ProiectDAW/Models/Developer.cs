@@ -17,7 +17,7 @@ namespace ProiectDAW.Models
 
         [Required]
         [Display(Name = "Description")]
-        [RegularExpression(@"^[a-zA-Z0-9'\s-]{3,300}$", ErrorMessage = "Between 3 and 300 characters allowed (a-z, A-Z, 0-9)")]
+        [RegularExpression(@"^[a-zA-Z0-9',.\s-]{3,600}$", ErrorMessage = "Between 3 and 600 characters allowed (a-z, A-Z, 0-9)")]
         public string DeveloperDescription { get; set; }
 
         public virtual ICollection<Game> Games { get; set; }

@@ -19,7 +19,7 @@ namespace ProiectDAW.Models
 
         [Required]
         [Display(Name = "Review")]
-        [RegularExpression(@"^[a-zA-Z0-9'\s-]{3,800}$", ErrorMessage = "Between 3 and 800 characters allowed (a-z, A-Z, 0-9)")]
+        [RegularExpression(@"^[a-zA-Z0-9',.\s-]{3,1600}$", ErrorMessage = "Between 3 and 1600 characters allowed (a-z, A-Z, 0-9)")]
         public string ReviewInfo { get; set; }
 
         public virtual Game Game { get; set; }
