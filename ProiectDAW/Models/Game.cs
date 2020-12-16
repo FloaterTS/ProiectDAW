@@ -21,6 +21,8 @@ namespace ProiectDAW.Models
 
         public virtual Developer Developer { get; set; }
 
+        public virtual Review Review { get; set; }
+
         public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }

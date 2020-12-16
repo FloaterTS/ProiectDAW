@@ -42,5 +42,7 @@ namespace ProiectDAW.Models
         public System.Data.Entity.DbSet<ProiectDAW.Models.BuyPackage> BuyPackages { get; set; }
 
         public System.Data.Entity.DbSet<ProiectDAW.Models.Reservation> Reservations { get; set; }
+
+        public System.Data.Entity.DbSet<ProiectDAW.Models.Review> Reviews { get; set; }
     }
 }
