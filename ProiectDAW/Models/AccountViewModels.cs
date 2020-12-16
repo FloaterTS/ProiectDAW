@@ -68,7 +68,7 @@ namespace ProiectDAW.Models
         public string UserName { get; set; }
 
         [Required]
-        [Display(Name = "User Type")]
+        [Display(Name = "Preferred Platform")]
         public string UserType { get; set; }
 
         [Required]

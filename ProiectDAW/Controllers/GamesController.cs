@@ -10,11 +10,13 @@ using ProiectDAW.Models;
 
 namespace ProiectDAW.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class GamesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Games
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var games = db.Games.Include(g => g.Developer);
@@ -22,6 +24,7 @@ namespace ProiectDAW.Controllers
         }
 
         // GET: Games/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)

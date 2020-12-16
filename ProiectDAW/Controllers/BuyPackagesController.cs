@@ -10,17 +10,20 @@ using ProiectDAW.Models;
 
 namespace ProiectDAW.Controllers
 {
+    [Authorize(Roles ="Administrator")]
     public class BuyPackagesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: BuyPackages
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.BuyPackages.ToList());
         }
 
         // GET: BuyPackages/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)

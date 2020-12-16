@@ -10,6 +10,7 @@ using ProiectDAW.Models;
 
 namespace ProiectDAW.Controllers
 {
+    [Authorize]
     public class ReservationsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -37,6 +38,7 @@ namespace ProiectDAW.Controllers
         }
 
         // GET: Reservations/Create
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             ViewBag.BuyPackageId = new SelectList(db.BuyPackages, "Id", "BuyPackageName");
@@ -66,6 +68,7 @@ namespace ProiectDAW.Controllers
         }
 
         // GET: Reservations/Edit/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -103,6 +106,7 @@ namespace ProiectDAW.Controllers
         }
 
         // GET: Reservations/Delete/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

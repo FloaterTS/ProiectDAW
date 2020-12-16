@@ -10,17 +10,20 @@ using ProiectDAW.Models;
 
 namespace ProiectDAW.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class DevelopersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Developers
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Developers.ToList());
         }
 
         // GET: Developers/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)

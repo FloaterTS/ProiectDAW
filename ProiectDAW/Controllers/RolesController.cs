@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace ProiectDAW.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class RolesController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
