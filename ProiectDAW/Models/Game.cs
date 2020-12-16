@@ -12,9 +12,11 @@ namespace ProiectDAW.Models
 
         [Required]
         [Display(Name = "Game Name")]
+        [RegularExpression(@"^[a-zA-Z0-9'\s-]{3,50}$", ErrorMessage = "Between 3 and 50 characters allowed (a-z, A-Z, 0-9)")]
         public string GameName { get; set; }
 
         [Display(Name = "Description")]
+        [RegularExpression(@"^[a-zA-Z0-9'\s-]{3,500}$", ErrorMessage = "Between 3 and 500 characters allowed (a-z, A-Z, 0-9)")]
         public string GameDescription { get; set; }
 
         public int DeveloperId { get; set; }
