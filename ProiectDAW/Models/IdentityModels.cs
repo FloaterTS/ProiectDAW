@@ -35,14 +35,14 @@ namespace ProiectDAW.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<ProiectDAW.Models.Developer> Developers { get; set; }
+        public DbSet<Developer> Developers { get; set; }
 
-        public System.Data.Entity.DbSet<ProiectDAW.Models.Game> Games { get; set; }
+        public DbSet<Game> Games { get; set; }
 
-        public System.Data.Entity.DbSet<ProiectDAW.Models.BuyPackage> BuyPackages { get; set; }
+        public DbSet<BuyPackage> BuyPackages { get; set; }
 
-        public System.Data.Entity.DbSet<ProiectDAW.Models.Reservation> Reservations { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
-        public System.Data.Entity.DbSet<ProiectDAW.Models.Review> Reviews { get; set; }
+        public DbSet<Review> Reviews { get; set; }
     }
 }
